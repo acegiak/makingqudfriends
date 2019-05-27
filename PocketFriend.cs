@@ -39,14 +39,7 @@ namespace XRL.World.Parts
 		public override bool FireEvent(Event E)
 		{
 
-            if (E.ID == "EnterCell")
-			{
-				if (StartActive && !IsActive())
-				{
-					ActivateForceEmitter();
-				}
-				ParentObject.UnregisterPartEvent(this, "EnterCell");
-			}
+
 
             if (E.ID == "PowerSwitchActivate")
             {

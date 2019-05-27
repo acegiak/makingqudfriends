@@ -5,7 +5,7 @@
     <part Name="Physics" Conductivity="1" IsReal="true" Takeable="true" Weight="50" />
     <part Name="Body" Builder="BodyBipedalRobot" />
     <part Name="DroidScramblerWeakness" />
-    <part Name="Render" DisplayName="&amp;cautovalet" RenderString="2" ColorString="&amp;c" Tile="Creatures/sw_waydroid.bmp" DetailColor="W" />
+    <part Name="Render" DisplayName="&amp;cautovalet" RenderString="2" ColorString="&amp;c" Tile="Creatures/autovalet.png" DetailColor="K" />
     <part Name="Brain" Hostile="false"  /> 
     <part Name="acegiak_PocketFriend" />
 
