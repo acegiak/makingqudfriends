@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mods>
+  <mod Part="acegiak_ModHandy" Tables="RobotMods" Rarity="C" MinTier="2" MaxTier="99" TinkerTier="1" TinkerDisplayName="handy" Value="1.2" Description="&amp;CHandy: This robot has been equiped with arms and hands for holding and manipulating things." />  
+  <mod Part="acegiak_ModTreaded" Tables="RobotMods" Rarity="C" MinTier="2" MaxTier="99" TinkerTier="1" TinkerDisplayName="treaded" Value="1.1" Description="&amp;CTreaded: This robot has been equiped with treads allowing them to carry heavy loads." />  
+</mods>
