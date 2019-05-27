@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "makingfriends",
+			"path": "."
+		},
+		{
+			"name": "qudassembly",
+			"path": "/home/acegiak/git/qudassembly"
+		},
+		{
+			"name": "CoQ_Data",
+			"path": "/home/acegiak/.steam/steam/steamapps/common/Caves of Qud/CoQ_Data"
+		},
+		{
+			"path": "/home/acegiak/.config/unity3d/Freehold Games/CavesOfQud"
+		}
+	],
+	"settings": {}
+}

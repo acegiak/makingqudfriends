@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations>
+ <conversation ID="acegiak_Atusa">
+    <node ID="Start">
+      <text>We can remake the world, =player.formalAddressTerm=, fill it with our made kin.</text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+  </conversation>
+  </conversations>

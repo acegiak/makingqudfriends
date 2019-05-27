@@ -23,4 +23,41 @@
     <tag Name="DynamicObjectsTable:Deathlands_Creatures" /> -->
   </object>
 
+    <object Name="Atusa" Inherits="BaseHumanoid">
+    <part Name="Render" DisplayName="Atusa, Botmother" Tile="Creatures/Atusa.png" ColorString="&amp;w" DetailColor="G"></part>
+    <stat Name="Level" Value="20"></stat>
+    <stat Name="Strength" Value="12"></stat>
+    <stat Name="Agility" Value="20"></stat>
+    <stat Name="Toughness" Value="16"></stat>
+    <stat Name="Intelligence" Value="26"></stat>
+    <stat Name="Willpower" Value="20"></stat>
+    <stat Name="Ego" Value="20"></stat>
+    <stat Name="Hitpoints" Value="60"></stat>
+    <part Name="ConversationScript" ConversationID="acegiak_Atusa" />
+    <inventoryobject Blueprint="Ceremonial Khopesh" Number="1"></inventoryobject>
+    <inventoryobject Blueprint="Cloth Robe" Number="1"></inventoryobject>
+    <inventoryobject Blueprint="Borderlands Revolver" Number="1"></inventoryobject>
+    <inventoryobject Blueprint="Lead Slug" Number="16"></inventoryobject>
+    <part Name="Brain" Hostile="false" Wanders="false" Factions="Pariahs-100"></part>
+    <part Name="GivesRep"></part>
+    <xtagWaterRitual NoJoin="true" SellSkill="false" SellBlueprints="true" numRecipes="1"></xtagWaterRitual>
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <skill Name="ShortBlades_Jab"></skill>
+    <skill Name="ShortBlades"></skill>
+    <skill Name="Pistol"></skill>
+    <builder Name="acegiak_AtusaWares" />
+    <mutation Name="Psychometry" Level="5"></mutation>
+    <intproperty Name="CanRecharge" Value="1" />
+    <intproperty Name="CanRepair" Value="1" />
+    <intproperty Name="CanIdentify" Value="3" />
+    <part Name="Description" Short="A hunched figure, dressed in a ragged sacks, manipulates blinking machinery in blistered hands."></part>
+    <part Name="AISelfPreservation" Threshold="60" />
+    <tag Name="Gender" Value="female" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="NoHateFactions" Value="Wardens,Mechanimists,Barathrumites" />
+    <property Name="Role" Value="NPC" />
+    <tag Name="AllowIdleBehavior" />
+    <tag Name="BaseObject" Value="*noinherit" />
+  </object>
+
   </objects>
