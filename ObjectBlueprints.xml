@@ -24,7 +24,7 @@
   </object>
 
     <object Name="Atusa" Inherits="BaseHumanoid">
-    <part Name="Render" DisplayName="Atusa, Botmother" Tile="Creatures/Atusa.png" ColorString="&amp;w" DetailColor="G"></part>
+    <part Name="Render" DisplayName="Atusa, Botmother" Tile="Creatures/Atusa.png" ColorString="&amp;Y" DetailColor="g"></part>
     <stat Name="Level" Value="20"></stat>
     <stat Name="Strength" Value="12"></stat>
     <stat Name="Agility" Value="20"></stat>

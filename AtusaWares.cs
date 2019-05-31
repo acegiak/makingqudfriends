@@ -15,6 +15,9 @@ namespace XRL.World.Encounters.EncounterObjectBuilders
 	{
 		public override void Stock(GameObject GO, string Context = null)
 		{
+			GO.TakeObject(TinkerData.createDataDisk("Autovalet"), true, 0);
+			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModTreaded"), true, 0);
+			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModHandy"), true, 0);
 			int i = 0;
 			for (int num = Stat.Random(5, 7); i < num; i++)
 			{
@@ -40,9 +43,6 @@ namespace XRL.World.Encounters.EncounterObjectBuilders
 			{
 				GO.TakeObject(GameObject.create("DataDisk", Context), true, 0);
 			}
-			GO.TakeObject(TinkerData.createDataDisk("Autovalet"), true, 0);
-			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModTreaded"), true, 0);
-			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModHandy"), true, 0);
 			int n = 0;
 			for (int num6 = Stat.Random(3, 5); n < num6; n++)
 			{
