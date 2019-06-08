@@ -9,7 +9,6 @@
     <part Name="Brain" Hostile="false"  /> 
     <part Name="acegiak_PocketFriend" />
 
-    <part Name="PowerSwitch"  Active="false"/>
     <part Name="Description" Short="A man-sized cylinder stands on two mechanical legs." />
     <tag Name="SimpleConversation" Value="&amp;w*soft whirring*&amp;y" />
     <part Name="TinkerItem" Bits="0045" CanDisassemble="true" CanBuild="true" CanRepair="true" />
@@ -17,6 +16,8 @@
 
 
     <!-- <inventoryobject Blueprint="Waydroid_Shockrod" Number="2" />
+        <part Name="PowerSwitch"  Active="false"/>
+
     <inventoryobject Chance="10" Blueprint="Chem Cell" />
     <inventoryobject Chance="5" Blueprint="Stun Rod" />
     <property Name="Role" Value="Brute" />

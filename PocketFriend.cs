@@ -21,6 +21,8 @@ namespace XRL.World.Parts
 	public class acegiak_PocketFriend : IPart
 	{
 
+        private bool boot = false;
+
 		public acegiak_PocketFriend()
 		{
 			base.Name = "acegiak_PocketFriend";
@@ -32,18 +34,22 @@ namespace XRL.World.Parts
 			Object.RegisterPartEvent(this, "GetInventoryActions");
 			Object.RegisterPartEvent(this, "PowerSwitchActivate");
 			Object.RegisterPartEvent(this, "CommandTakeObject");
-            
+			Object.RegisterPartEvent(this, "Dropped");
+            Object.RegisterPartEvent(this, "EnteredCell");
+
 			base.Register(Object);
 		}
 
 		public override bool FireEvent(Event E)
 		{
-
-
-
-            if (E.ID == "PowerSwitchActivate")
+            if (E.ID == "Dropped")
             {
+                boot = true;
+            }
   
+            if (E.ID == "EnteredCell" && boot)
+            {
+                boot = false;
                     if(ParentObject.GetPart<Brain>() == null){
                         return false;
                     }
