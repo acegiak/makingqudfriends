@@ -6,4 +6,10 @@
       <choice GotoID="End">Live and drink.</choice>
     </node>
   </conversation>
+ <conversation ID="acegiak_Zomber">
+    <node ID="Start">
+      <text>*gutteral heaving*</text>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+  </conversation>
   </conversations>

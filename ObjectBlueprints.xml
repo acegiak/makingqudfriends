@@ -13,15 +13,6 @@
     <tag Name="SimpleConversation" Value="&amp;w*soft whirring*&amp;y" />
     <part Name="TinkerItem" Bits="0045" CanDisassemble="true" CanBuild="true" CanRepair="true" />
     <tag Name="Mods" Value="RobotMods,CommonMods" />
-
-
-    <!-- <inventoryobject Blueprint="Waydroid_Shockrod" Number="2" />
-        <part Name="PowerSwitch"  Active="false"/>
-
-    <inventoryobject Chance="10" Blueprint="Chem Cell" />
-    <inventoryobject Chance="5" Blueprint="Stun Rod" />
-    <property Name="Role" Value="Brute" />
-    <tag Name="DynamicObjectsTable:Deathlands_Creatures" /> -->
   </object>
 
     <object Name="Atusa" Inherits="BaseHumanoid">
@@ -59,6 +50,18 @@
     <property Name="Role" Value="NPC" />
     <tag Name="AllowIdleBehavior" />
     <tag Name="BaseObject" Value="*noinherit" />
+  </object>
+
+
+  <object Name="Corpse" Load="Merge">
+      <tag Name="Mods" Value="RobotMods" />
+  </object>
+  <object Name="Creature" Load="Merge">
+      <part Name="acegiak_Zombable" />
+  </object>
+
+  <object Name="acegiak_Awoken" Inherits="Creature">
+    <inventoryobject Blueprint="Small Stone" Number="1" />
   </object>
 
   </objects>
