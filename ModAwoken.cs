@@ -77,6 +77,8 @@ namespace XRL.World.Parts
             Object.Statistics["MA"] = new Statistic("MA", -100, 2147483647, 0, Object);
 
 
+
+
             Object.GetPart<Render>().Tile = zomb.storedTile;
             Object.GetPart<Render>().TileColor = "y";
             Object.GetPart<Render>().DetailColor = "r";
