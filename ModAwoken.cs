@@ -46,15 +46,7 @@ namespace XRL.World.Parts
 		}
 		public override void ApplyModification(GameObject Object)
 		{
-            acegiak_Zombable zomb = Object.GetPart<acegiak_Zombable>();
-            Body newBody = new Body();
-            newBody._Body = acegiak_Zombable.BodyPartCopy(zomb.Body._Body,Object,newBody);
-            Object.AddPart(newBody);
 
-            Brain newBrain = new Brain();
-            Object.AddPart(newBrain);
-            Object.AddPart(new ConversationScript("acegiak_Zomber"));
-            Object.AddPart(new Inventory());
 
             Object.Statistics["Energy"] = new Statistic("Energy", -100000, 100000, 0, Object);
             Object.Statistics["Speed"] = new Statistic("Speed", 1, 100000, 100, Object);
@@ -76,6 +68,29 @@ namespace XRL.World.Parts
             Object.Statistics["AP"] = new Statistic("AP", 0, 2147483647, 0, Object);
             Object.Statistics["MA"] = new Statistic("MA", -100, 2147483647, 0, Object);
 
+
+            Object.Statistics["XP"] = new Statistic("XP", 0, 2147483647, 0, Object);
+            Object.Statistics["XPValue"] = new Statistic("XPValue", 0, 2147483647, 0, Object);
+            Object.Statistics["HeatResistance"] = new Statistic("HeatResistance", -100, 100, 0, Object);
+            Object.Statistics["ColdResistance"] = new Statistic("ColdResistance", -100, 100, 0, Object);
+            Object.Statistics["ElectricalResistance"] = new Statistic("ElectricalResistance", -100, 100, 0, Object);
+            Object.Statistics["AcidResistance"] = new Statistic("AcidResistance", -100, 100, 0, Object);
+
+            acegiak_Zombable zomb = Object.GetPart<acegiak_Zombable>();
+            Body newBody = new Body();
+            newBody._Body = acegiak_Zombable.BodyPartCopy(zomb.Body._Body,Object,newBody);
+            Object.AddPart(newBody);
+
+            Brain newBrain = new Brain();
+            Object.AddPart(newBrain);
+            Object.AddPart(new ConversationScript("acegiak_Zomber"));
+            Object.AddPart(new Inventory());
+            Object.AddPart(new Leveler());
+            Object.AddPart(new Experience());
+            Object.AddPart(new Mutations());
+            Object.AddPart(new Skills());
+            Object.AddPart(new ActivatedAbilities());
+            Object.AddPart(new RandomLoot());
 
 
 
