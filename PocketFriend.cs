@@ -63,6 +63,9 @@ namespace XRL.World.Parts
                     ParentObject.GetPart<Brain>().Calm = false;
                     ParentObject.GetPart<Brain>().Hibernating = false;
                     ParentObject.GetPart<Brain>().FactionMembership.Clear();
+
+                    ParentObject.AddPart(new Combat());
+                    
                     XRLCore.Core.Game.ActionManager.AddActiveObject(ParentObject);
 
             }

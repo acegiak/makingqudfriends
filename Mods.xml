@@ -2,6 +2,6 @@
 <mods>
   <mod Part="acegiak_ModHandy" Tables="RobotMods" Rarity="C" MinTier="2" MaxTier="99" TinkerTier="1" TinkerDisplayName="handy" Value="1.2" Description="&amp;CHandy: This robot has been equiped with arms and hands for holding and manipulating things." />  
   <mod Part="acegiak_ModTreaded" Tables="RobotMods" Rarity="C" MinTier="2" MaxTier="99" TinkerTier="1" TinkerDisplayName="treaded" Value="1.1" Description="&amp;CTreaded: This robot has been equiped with treads allowing them to carry heavy loads." />  
-  <mod Part="acegiak_ModAwoken" Tables="RobotMods" Rarity="R" MinTier="2" MaxTier="99" TinkerTier="3" TinkerDisplayName="awoken" Value="2.0" Description="&amp;CAwoken: This corpse has been reanimated with cybernetic technologies." />  
+  <mod Part="acegiak_ModAwoken" Tables="RobotMods" Rarity="R" MinTier="2" MaxTier="99" TinkerTier="4" TinkerDisplayName="awoken" Value="2" Description="&amp;CAwoken: This corpse has been reanimated with cybernetic technologies." />  
 
 </mods>

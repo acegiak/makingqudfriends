@@ -94,9 +94,17 @@ namespace XRL.World.Parts
             {
                 gameObject = GameObject.create(CorpsePart.CorpseBlueprint);
             }
+            if(gameObject == null){
+                CorpsePart.CorpseChance = 0;
+                CorpsePart.VaporizedCorpseChance = 0;
+                CorpsePart.BurntCorpseChance = 0;
+            }
             if(part != null && gameObject != null){
                 acegiak_Zombable zombieparts = new acegiak_Zombable();
-                zombieparts.Body = (Body)Body.DeepCopy(ParentObject);
+                zombieparts.Body = new Body();
+                ParentObject.DeepCopyInventoryObjectMap = new Dictionary<GameObject, GameObject>();
+                zombieparts.Body._Body = BodyPartCopy(part._Body,ParentObject,zombieparts.Body);
+                
                 zombieparts.storedTile = ParentObject.pRender.Tile;
                 gameObject.AddPart(zombieparts);
                 CorpsePart.CorpseObject = gameObject;
@@ -104,8 +112,53 @@ namespace XRL.World.Parts
             }
             IPart.AddPlayerMessage("Done!");
 
-
-
         }
+    public static BodyPart BodyPartCopy(BodyPart origin,GameObject Parent, Body NewBody)
+		{
+			BodyPart bodyPart = new BodyPart(NewBody);
+			bodyPart.Type = origin.Type;
+			bodyPart.VariantType = origin.VariantType;
+			bodyPart.Description = origin.Description;
+			bodyPart.Name = origin.Name;
+			bodyPart.SupportsDependent = origin.SupportsDependent;
+			bodyPart.DependsOn = origin.DependsOn;
+			bodyPart.RequiresType = origin.RequiresType;
+			bodyPart.PreventRegenerationBecause = origin.PreventRegenerationBecause;
+			bodyPart.Category = origin.Category;
+			bodyPart.Laterality = origin.Laterality;
+			bodyPart.RequiresLaterality = origin.RequiresLaterality;
+			bodyPart.Mobility = origin.Mobility;
+			bodyPart.Primary = origin.Primary;
+			bodyPart.Native = origin.Native;
+			bodyPart.Integral = origin.Integral;
+			bodyPart.Mortal = origin.Mortal;
+			bodyPart.Abstract = origin.Abstract;
+			bodyPart.Extrinsic = origin.Extrinsic;
+			bodyPart.Plural = origin.Plural;
+			bodyPart.Position = origin.Position;
+			bodyPart._ID = origin._ID;
+			bodyPart.ParentBody = NewBody;
+			// if (DefaultBehavior != null)
+			// {
+			// 	GameObject gameObject = DefaultBehavior.DeepCopy();
+			// 	Parent.DeepCopyInventoryObjectMap.Add(DefaultBehavior, gameObject);
+			// 	gameObject.pPhysics._Equipped = Parent;
+			// 	bodyPart.DefaultBehavior = gameObject;
+			// }
+			// if (Equipped != null && !Parent.DeepCopyInventoryObjectMap.ContainsKey(Equipped))
+			// {
+			// 	GameObject gameObject2 = Equipped.DeepCopy();
+			// 	Parent.DeepCopyInventoryObjectMap.Add(Equipped, gameObject2);
+			// 	Body.DeepCopyEquipMap.Add(gameObject2, bodyPart);
+			// }
+			foreach (BodyPart part in origin.Parts)
+			{
+				if (!part.Extrinsic)
+				{
+					bodyPart.AddPart(BodyPartCopy(part,Parent, NewBody));
+				}
+			}
+			return bodyPart;
+		}
     }
 }

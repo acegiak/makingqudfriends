@@ -47,16 +47,14 @@ namespace XRL.World.Parts
 		public override void ApplyModification(GameObject Object)
 		{
             acegiak_Zombable zomb = Object.GetPart<acegiak_Zombable>();
-            Body newBody = (Body)zomb.Body.DeepCopy(Object);
+            Body newBody = new Body();
+            newBody._Body = acegiak_Zombable.BodyPartCopy(zomb.Body._Body,Object,newBody);
             Object.AddPart(newBody);
 
             Brain newBrain = new Brain();
             Object.AddPart(newBrain);
-
-            Object.AddPart(new Combat());
-
-
             Object.AddPart(new ConversationScript("acegiak_Zomber"));
+            Object.AddPart(new Inventory());
 
             Object.Statistics["Energy"] = new Statistic("Energy", -100000, 100000, 0, Object);
             Object.Statistics["Speed"] = new Statistic("Speed", 1, 100000, 100, Object);
@@ -72,6 +70,11 @@ namespace XRL.World.Parts
             Object.Statistics["Wisdom"] = new Statistic("Wisdom", 1, 9000, 16, Object);
             Object.Statistics["Ego"] = new Statistic("Ego", 1, 9000, 16, Object);
             Object.Statistics["Intelligence"] = new Statistic("Intelligence", 1, 9000, 16, Object);
+
+            Object.Statistics["SP"] = new Statistic("SP", 0, 2147483647, 0, Object);
+            Object.Statistics["MP"] = new Statistic("MP", 0, 2147483647, 0, Object);
+            Object.Statistics["AP"] = new Statistic("AP", 0, 2147483647, 0, Object);
+            Object.Statistics["MA"] = new Statistic("MA", -100, 2147483647, 0, Object);
 
 
             Object.GetPart<Render>().Tile = zomb.storedTile;
@@ -124,6 +127,9 @@ namespace XRL.World.Parts
                     ParentObject.GetPart<Brain>().Calm = false;
                     ParentObject.GetPart<Brain>().Hibernating = false;
                     ParentObject.GetPart<Brain>().FactionMembership.Clear();
+
+                    ParentObject.AddPart(new Combat());
+
                     XRLCore.Core.Game.ActionManager.AddActiveObject(ParentObject);
 
             }
