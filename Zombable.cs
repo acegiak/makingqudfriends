@@ -57,16 +57,16 @@ namespace XRL.World.Parts
         }
 
         public void Zombablify(){
-            IPart.AddPlayerMessage("Attempt zombify");
+            //IPart.AddPlayerMessage("Attempt zombify");
             Corpse CorpsePart = ParentObject.GetPart<Corpse>();
             if(CorpsePart == null){
-                IPart.AddPlayerMessage("No Corpse!");
+                //IPart.AddPlayerMessage("No Corpse!");
                 return;
             }
 
             Body part = ParentObject.GetPart<Body>();
             if(part == null){
-                IPart.AddPlayerMessage("No Body!");
+                //IPart.AddPlayerMessage("No Body!");
                 return;
             }
 
@@ -108,9 +108,9 @@ namespace XRL.World.Parts
                 zombieparts.storedTile = ParentObject.pRender.Tile;
                 gameObject.AddPart(zombieparts);
                 CorpsePart.CorpseObject = gameObject;
-                IPart.AddPlayerMessage("Zombified!");
+                //IPart.AddPlayerMessage("Zombified!");
             }
-            IPart.AddPlayerMessage("Done!");
+            //IPart.AddPlayerMessage("Done!");
 
         }
     public static BodyPart BodyPartCopy(BodyPart origin,GameObject Parent, Body NewBody)
