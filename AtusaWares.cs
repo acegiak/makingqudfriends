@@ -18,6 +18,8 @@ namespace XRL.World.Encounters.EncounterObjectBuilders
 			GO.TakeObject(TinkerData.createDataDisk("Autovalet"), true, 0);
 			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModTreaded"), true, 0);
 			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModHandy"), true, 0);
+			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModAwoken"), true, 0);
+			GO.TakeObject(TinkerData.createDataDisk("mod:acegiak_ModPlated"), true, 0);
 			int i = 0;
 			for (int num = Stat.Random(5, 7); i < num; i++)
 			{
