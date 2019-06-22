@@ -104,7 +104,9 @@ namespace XRL.World.Parts
                 zombieparts.Body = new Body();
                 ParentObject.DeepCopyInventoryObjectMap = new Dictionary<GameObject, GameObject>();
                 zombieparts.Body._Body = BodyPartCopy(part._Body,ParentObject,zombieparts.Body);
-                
+                if(zombieparts.Body._Body == null){
+					return;
+				}
                 zombieparts.storedTile = ParentObject.pRender.Tile;
                 gameObject.AddPart(zombieparts);
                 CorpsePart.CorpseObject = gameObject;
@@ -115,6 +117,9 @@ namespace XRL.World.Parts
         }
     public static BodyPart BodyPartCopy(BodyPart origin,GameObject Parent, Body NewBody)
 		{
+			if(origin == null || NewBody == null || Parent == null){
+				return null;
+			}
 			BodyPart bodyPart = new BodyPart(NewBody);
 			bodyPart.Type = origin.Type;
 			bodyPart.VariantType = origin.VariantType;
@@ -151,11 +156,20 @@ namespace XRL.World.Parts
 			// 	Parent.DeepCopyInventoryObjectMap.Add(Equipped, gameObject2);
 			// 	Body.DeepCopyEquipMap.Add(gameObject2, bodyPart);
 			// }
+			if(origin.Parts == null){
+				return bodyPart;
+			}
+			if(bodyPart.Parts == null){
+				bodyPart.Parts  = new List<BodyPart>(13);
+			}
 			foreach (BodyPart part in origin.Parts)
 			{
 				if (!part.Extrinsic)
 				{
-					bodyPart.AddPart(BodyPartCopy(part,Parent, NewBody));
+					BodyPart copy = BodyPartCopy(part,Parent, NewBody);
+					if(copy != null){
+						bodyPart.AddPart(copy);
+					}
 				}
 			}
 			return bodyPart;
