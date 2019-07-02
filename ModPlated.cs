@@ -23,8 +23,12 @@ namespace XRL.World.Parts
 
 		public override void ApplyModification(GameObject Object)
 		{
-                Object.Statistics["Toughness"].BaseValue += 4;
-                Object.Statistics["AV"].BaseValue += 3;
+			if(Object.Statistics.ContainsKey("Toughness")){
+				Object.Statistics["Toughness"].BaseValue += 4;
+			}
+			if(Object.Statistics.ContainsKey("AV")){
+				Object.Statistics["AV"].BaseValue += 3;
+			}
 		}
 
 		public override bool SameAs(IPart p)
