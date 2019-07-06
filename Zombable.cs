@@ -23,6 +23,7 @@ namespace XRL.World.Parts
 
 
         // public BodyPart Part;
+		[NonSerialized]
         public Body Body = new Body();
 
         public string storedTile;
@@ -174,5 +175,23 @@ namespace XRL.World.Parts
 			}
 			return bodyPart;
 		}
+
+
+		public override void SaveData(SerializationWriter Writer)
+		{
+			Body.SaveData(Writer);
+			
+			base.SaveData(Writer);
+		}
+
+		public override void LoadData(SerializationReader Reader)
+		{
+			Body Body = new Body();
+			Body.LoadData(Reader);
+			
+			base.LoadData(Reader);
+		}
+
+
     }
 }
