@@ -62,5 +62,12 @@ namespace XRL.World.Parts
 			}
 			return base.FireEvent(E);
 		}
+		public override bool ModificationApplicable(GameObject Object)
+		{
+			if(Object.GetPart<acegiak_ModPlated>() != null){
+				return false;
+			}
+			return true;
+		}
 	}
 }

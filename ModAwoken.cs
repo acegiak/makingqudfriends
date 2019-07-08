@@ -38,7 +38,9 @@ namespace XRL.World.Parts
 
 		public override bool ModificationApplicable(GameObject Object)
 		{
-			if(Object.GetPart<acegiak_Zombable>() == null){
+			if(Object.GetPart<acegiak_Zombable>() == null
+            || Object.GetPart<acegiak_Zombable>().Body == null
+            || Object.GetPart<acegiak_Zombable>().Body._Body == null){
                 return false;
             }
 
