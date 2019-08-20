@@ -54,7 +54,7 @@
 
 
   <object Name="Corpse" Load="Merge">
-      <tag Name="Mods" Value="RobotMods" />
+      <tag Name="Mods" Value="RobotMods,CommonMods" />
   </object>
   <object Name="Creature" Load="Merge">
       <part Name="acegiak_Zombable" />
