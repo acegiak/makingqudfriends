@@ -70,6 +70,7 @@ namespace XRL.World.Parts
             Object.Statistics["AP"] = new Statistic("AP", 0, 2147483647, 0, Object);
             Object.Statistics["MA"] = new Statistic("MA", -100, 2147483647, 0, Object);
 
+            Object.Statistics["Level"] = new Statistic("Level", 1, 10000, 1, Object);
 
             Object.Statistics["XP"] = new Statistic("XP", 0, 2147483647, 0, Object);
             Object.Statistics["XPValue"] = new Statistic("XPValue", 0, 2147483647, 0, Object);

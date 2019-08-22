@@ -81,19 +81,19 @@ namespace XRL.World.Parts
             {
                 if (CorpsePart.BurntCorpseChance > 0 && (string.IsNullOrEmpty(CorpsePart.BurntCorpseRequiresBodyPart) || (part != null && part.GetFirstPart(CorpsePart.BurntCorpseRequiresBodyPart) != null)) && (CorpsePart.BurntCorpseChance >= 100 || Stat.Random(1, 100) <= CorpsePart.BurntCorpseChance))
                 {
-                    gameObject = GameObject.create(CorpsePart.BurntCorpseBlueprint);
+                    gameObject = GameObject.createUnmodded(CorpsePart.BurntCorpseBlueprint);
                 }
             }
             else if (ParentObject.pPhysics.LastDamagedByType == "Vaporized")
             {
                 if (CorpsePart.VaporizedCorpseChance > 0 && (string.IsNullOrEmpty(CorpsePart.VaporizedCorpseRequiresBodyPart) || (part != null && part.GetFirstPart(CorpsePart.VaporizedCorpseRequiresBodyPart) != null)) && (CorpsePart.VaporizedCorpseChance >= 100 || Stat.Random(1, 100) <= CorpsePart.VaporizedCorpseChance))
                 {
-                    gameObject = GameObject.create(CorpsePart.VaporizedCorpseBlueprint);
+                    gameObject = GameObject.createUnmodded(CorpsePart.VaporizedCorpseBlueprint);
                 }
             }
             else if (CorpsePart.CorpseChance > 0 && (string.IsNullOrEmpty(CorpsePart.CorpseRequiresBodyPart) || (part != null && part.GetFirstPart(CorpsePart.CorpseRequiresBodyPart) != null)) && (CorpsePart.CorpseChance >= 100 || Stat.Random(1, 100) <= CorpsePart.CorpseChance))
             {
-                gameObject = GameObject.create(CorpsePart.CorpseBlueprint);
+                gameObject = GameObject.createUnmodded(CorpsePart.CorpseBlueprint);
             }
             if(gameObject == null){
                 CorpsePart.CorpseChance = 0;
