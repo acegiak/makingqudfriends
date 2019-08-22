@@ -1,0 +1,16 @@
+<encountertables>
+
+
+
+  <encountertable Name="Grit Gate 5"  Density="minimum">
+    <objects>
+        <object Chance="100" Number="1" Blueprint="Atusa"></object>
+        <tableobject Chance="100" Table="Grit Gate 1"></tableobject>
+
+    </objects>
+    <mergetables>
+      <mergetable Table="Grit Gate 1" Weight="medium"></mergetable>
+      <mergetable Table="Cave Features" Weight="very low"></mergetable>
+    </mergetables>
+  </encountertable>
+  </encountertables>
