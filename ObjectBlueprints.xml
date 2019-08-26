@@ -8,7 +8,14 @@
     <part Name="Render" DisplayName="&amp;cautovalet" RenderString="2" ColorString="&amp;c" Tile="Creatures/autovalet.png" DetailColor="K" />
     <part Name="Brain" Hostile="false"  /> 
     <part Name="acegiak_PocketFriend" />
-
+    <stat Name="Level" Value="12"></stat>
+    <stat Name="Strength" Value="24"></stat>
+    <stat Name="Agility" Value="19"></stat>
+    <stat Name="Toughness" Value="22"></stat>
+    <stat Name="Intelligence" Value="16"></stat>
+    <stat Name="Willpower" Value="14"></stat>
+    <stat Name="Ego" Value="18"></stat>
+    <stat Name="Hitpoints" Value="100"></stat>
     <part Name="Description" Short="A man-sized cylinder stands on two mechanical legs." />
     <tag Name="SimpleConversation" Value="&amp;w*soft whirring*&amp;y" />
     <part Name="TinkerItem" Bits="0045" CanDisassemble="true" CanBuild="true" CanRepair="true" />
