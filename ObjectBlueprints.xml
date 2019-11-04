@@ -3,7 +3,7 @@
 
   <object Name="Autovalet" Inherits="BaseRobot">
     <part Name="Physics" Conductivity="1" IsReal="true" Takeable="true" Weight="50" />
-    <part Name="Body" Builder="BodyBipedalRobot" />
+    <part Name="Body"  Anatomy="BipedalRobot" />
     <part Name="DroidScramblerWeakness" />
     <part Name="Render" DisplayName="&amp;cautovalet" RenderString="2" ColorString="&amp;c" Tile="Creatures/autovalet.png" DetailColor="K" />
     <part Name="Brain" Hostile="false"  /> 
