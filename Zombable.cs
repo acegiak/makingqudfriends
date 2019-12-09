@@ -182,7 +182,7 @@ namespace XRL.World.Parts
 			if(Body._Body == null){
 				Writer.Write(0);
 			}else{
-				Witer.Write(1);
+				Writer.Write(1);
 				Body.SaveData(Writer);	
 			}
 			
