@@ -192,10 +192,11 @@ namespace XRL.World.Parts
 		public override void LoadData(SerializationReader Reader)
 		{
 			Body Body = new Body();
-			if(Reader.ReadInt32() > 0){
+			int num = Reader.ReadInt32();
+			if (num > 0)
+			{
 				Body.LoadData(Reader);
 			}
-			
 			base.LoadData(Reader);
 		}
 
