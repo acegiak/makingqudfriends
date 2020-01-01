@@ -179,7 +179,12 @@ namespace XRL.World.Parts
 
 		public override void SaveData(SerializationWriter Writer)
 		{
-			Body.SaveData(Writer);
+			if(Body._Body == null){
+				Writer.Write(0);
+			}else{
+				Writer.Write(1);
+				Body.SaveData(Writer);
+			}
 			
 			base.SaveData(Writer);
 		}
@@ -187,7 +192,9 @@ namespace XRL.World.Parts
 		public override void LoadData(SerializationReader Reader)
 		{
 			Body Body = new Body();
-			Body.LoadData(Reader);
+			if(Reader.ReadInt32() > 0){
+				Body.LoadData(Reader);
+			}
 			
 			base.LoadData(Reader);
 		}
